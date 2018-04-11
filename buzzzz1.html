@@ -22,6 +22,10 @@
     </header>
     <main>
         <div class="section-list-style" id="animal-list"></div>
+        <div class="footer-bar" id="sticky-footer">
+            <div class="footer-bar__confirm">Confirm</div>
+            <div class="footer-bar__give-up">Give up</div>
+        </div>
     </main>
 </body>
 </html>
@@ -36,7 +40,6 @@
 
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
-
       // While there remain elements to shuffle...
       while (0 !== currentIndex) {
 
@@ -49,7 +52,6 @@
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
       }
-
       return array;
     }
 
@@ -66,7 +68,7 @@
 
                 html = html + divForAnimal(animals[animal_ind]);
                 animal_ind += 1;
-                
+
             }
             html = html + '</div>';
         }
