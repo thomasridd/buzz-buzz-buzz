@@ -22,9 +22,10 @@
     </header>
     <main>
         <div class="section-list-style" id="animal-list"></div>
+
         <div class="footer-bar" id="sticky-footer">
-            <div class="footer-bar__confirm">Confirm</div>
-            <div class="footer-bar__give-up">Give up</div>
+            <div class="footer-bar__confirm buzz-btn buzz-btn-confirm">Confirm</div>
+            <div class="footer-bar__give-up buzz-btn buzz-btn-warning">Give up</div>
         </div>
     </main>
 </body>
@@ -72,6 +73,8 @@
             }
             html = html + '</div>';
         }
+        html = html + '<div class="row footer-row">&nbsp;</div>';
+        html = html + '<div class="row footer-row">&nbsp;</div>';
 
 
         document.getElementById("animal-list").innerHTML = html

@@ -6,21 +6,20 @@
 		color: $color-white;
 		text-transform: uppercase;
 		text-decoration: none;
-		padding: .5rem 4rem;
+		padding: .75rem 4rem;
 		display: inline-block;
 		border-radius: 1rem;
 		transition: all .2s;
 		position: relative;
 		font-size: 1.6rem;
-
-		//Change for the <button> element
+		margin-right: 1.5rem;
 		border: none;
 		cursor: pointer;
 	}
 
 	&:hover {
-		// transform: translateY(-.2rem);
-		box-shadow: 0 1rem 2rem rgba($color-black,.2);
+		transform: translateY(-.2rem);
+		background-color: $color-grey-dark;
 
 		&::after {
 			transform: scaleX(1.4) scaleY(1.6);
@@ -31,8 +30,9 @@
 	&:active,
 	&:focus {
 		outline: none;
-		// transform: translateY(-.1rem);
-		box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+		transform: translateY(-.1rem);
+		background-color: $color-grey-dark-3;
+		// box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 	}
 
 	&::after {
@@ -46,6 +46,40 @@
 		left:0;
 		z-index: -1;
 		transition: all .4s;
+	}
+
+	&-warning {
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-warning;
+		}
+
+		&:hover {
+			background-color: $color-warning-light;
+		}
+
+		&:active,
+		&:focus {
+			background-color: $color-warning;
+		}
+	}
+
+	&-confirm {
+		&,
+		&:link,
+		&:visited {
+			background-color: $color-confirm;
+		}
+
+		&:hover {
+			background-color: $color-confirm-light;
+		}
+
+		&:active,
+		&:focus {
+			background-color: $color-confirm;
+		}
 	}
 }
 

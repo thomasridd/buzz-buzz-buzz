@@ -99,6 +99,7 @@ body {
   .animal-button__image {
     width: 100%; }
   .animal-button:hover {
+    transform: translateY(-0.2rem);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
     .animal-button:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -113,24 +114,27 @@ body {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  padding: .5rem 4rem;
+  padding: .75rem 4rem;
   display: inline-block;
   border-radius: 1rem;
   transition: all .2s;
   position: relative;
   font-size: 1.6rem;
+  margin-right: 1.5rem;
   border: none;
   cursor: pointer; }
 
 .buzz-btn:hover {
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  transform: translateY(-0.2rem);
+  background-color: #777; }
   .buzz-btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
 .buzz-btn:active, .buzz-btn:focus {
   outline: none;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  transform: translateY(-0.1rem);
+  background-color: #333; }
 
 .buzz-btn::after {
   content: "";
@@ -143,6 +147,24 @@ body {
   left: 0;
   z-index: -1;
   transition: all .4s; }
+
+.buzz-btn-warning, .buzz-btn-warning:link, .buzz-btn-warning:visited {
+  background-color: #d0404f; }
+
+.buzz-btn-warning:hover {
+  background-color: #d74542; }
+
+.buzz-btn-warning:active, .buzz-btn-warning:focus {
+  background-color: #d0404f; }
+
+.buzz-btn-confirm, .buzz-btn-confirm:link, .buzz-btn-confirm:visited {
+  background-color: #55c57a; }
+
+.buzz-btn-confirm:hover {
+  background-color: #7ed56f; }
+
+.buzz-btn-confirm:active, .buzz-btn-confirm:focus {
+  background-color: #55c57a; }
 
 .btn, .btn:link, .btn:visited {
   background-color: lightblue;
@@ -218,6 +240,19 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translatey(0); }
+
+.footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 8rem;
+  padding: 1.5rem;
+  background-color: #111;
+  color: #eee;
+  bottom: 0vh;
+  text-align: center; }
 
 .footer {
   background-color: #333;
@@ -338,3 +373,6 @@ body {
   min-width: 35rem;
   left: 50%;
   transform: translateX(-50%); }
+
+.footer-bonus-row {
+  height: 10rem; }
