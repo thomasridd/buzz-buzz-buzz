@@ -12,6 +12,11 @@
 		width: 100%;
 	}
 
+	&-selected {
+		border: solid 3px $color-confirm;
+		transform: translateY(-.1rem);
+		box-shadow: 0 1rem 2rem rgba($color-black,.2);
+	}
 
 	&:hover {
 		transform: translateY(-.2rem);

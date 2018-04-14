@@ -24,19 +24,44 @@
         <div class="section-list-style" id="animal-list"></div>
 
         <div class="footer-bar" id="sticky-footer">
-            <div class="footer-bar__confirm buzz-btn buzz-btn-confirm">Confirm</div>
-            <div class="footer-bar__give-up buzz-btn buzz-btn-warning">Give up</div>
+            <div id='confirm' class="footer-bar__confirm buzz-btn buzz-btn-confirm buzz-btn-confirm-disabled">Confirm</div>
+            <div id='cancel'  class="footer-bar__give-up buzz-btn buzz-btn-warning">Give up</div>
         </div>
     </main>
 </body>
 </html>
 
 <script>
+    var selected_animal = "";    
+    var animals = ['antelope', 'bear', 'bee', 'camel', 'dog', 'dolphin', 'dragonfly', 'duck', 'elephant', 'fish', 'fox', 'frog', 'gnat', 'hawk', 'horse', 'koala', 'pig', 'pigeon', 'sheep', 'stag', 'swan', 'walrus', 'wasp', 'zebra'];
+
     function divForAnimal(animal) {
         return '<div class="col-1-of-4">' + 
-        '<div class="animal-button", id="' + animal + '">' + 
+        '<div class="animal-button", id="' + animal + '" onClick="clickAnimalButton(\'' + animal + '\')">' + 
         '<img class="animal-button__image" src="img/animals/' + animal + '.png" />' +
         '</div></div>';
+    }
+
+    function clickAnimalButton(animal) {
+        selected_animal = animal
+        deselectAnimals()
+        selectAnimal(selected_animal)
+        activeConfirmButton()
+    }
+
+    function deselectAnimals() {
+        for(i=0; i<animals.length; i++) {
+            console.log(document.getElementById(animals[i]))
+            document.getElementById(animals[i]).classList.remove("animal-button-selected");
+        }
+    }
+
+    function selectAnimal(animal) {
+        document.getElementById(animal).classList.add("animal-button-selected");
+    }
+
+    function activeConfirmButton() {
+        document.getElementById('confirm').classList.remove('buzz-btn-confirm-disabled')
     }
 
     function shuffle(array) {
@@ -58,7 +83,6 @@
 
     document.addEventListener("DOMContentLoaded", function(event) { 
 
-        var animals = ['antelope', 'bear', 'bee', 'camel', 'dog', 'dolphin', 'dragonfly', 'duck', 'elephant', 'fish', 'fox', 'frog', 'gnat', 'hawk', 'horse', 'koala', 'pig', 'pigeon', 'sheep', 'stag', 'swan', 'walrus', 'wasp', 'zebra']
         shuffle(animals)
 
         var html = ''

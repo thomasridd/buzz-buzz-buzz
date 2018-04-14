@@ -50,6 +50,15 @@ body {
 		&__form-btn {
 			left: 50%;
 			transform: translateX(-50%);
+
+			&:hover {
+				transform: translate(-50%, -.2rem);
+			}
+
+			&:active,
+			&:focus {
+				transform: translate(-50%, -.1rem);
+			}
 		}
 	}
 }
